@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="py-4 px-6 bg-white shadow-md">
+      <nav className="py-4 px-6 ">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <motion.div 
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
                       initial={{ opacity: 0, y: -10 }} 
                       animate={{ opacity: 1, y: 0 }} 
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md p-4 space-y-2 z-10"
+                      className="absolute left-0 mt-2 w-56 bg-white shadow-lgd rounded-md p-4 space-y-2 z-10"
                     >
                       {categories[category].map((subCategory, subIndex) => (
                         <a 
