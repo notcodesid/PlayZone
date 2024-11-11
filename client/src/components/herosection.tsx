@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Award, Trophy, Target, Users, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
 
