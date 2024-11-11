@@ -6,6 +6,9 @@ import TestimonialsAthletes from "./components/TestimonialsAthletes";
 import SpecialOffers from "./components/sections/SpecialOffers";
 import NewArrivals from "./components/sections/NewArrivals";
 import TopBrands from "./components/sections/TopBrands";
+import Newsletter from "./components/sections/Newsletter";
+import SocialGallery from "./components/sections/SpecialOffers";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,7 +20,10 @@ function App() {
       <Categories />
       <NewArrivals />
       <TopBrands />
+      <SocialGallery />
       <TestimonialsAthletes />
+      <Newsletter />
+      <Footer />
     </div>
   );
 }
