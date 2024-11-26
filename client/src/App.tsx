@@ -15,9 +15,9 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <Hero />
-      <SpecialOffers />
       <FeaturedProducts />
       <Categories />
+      <SpecialOffers />
       <NewArrivals />
       <TopBrands />
       <SocialGallery />

@@ -39,7 +39,7 @@ const Hero = () => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 pb-5">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Left Column */}
           <div className="md:col-span-7 flex flex-col justify-center">
