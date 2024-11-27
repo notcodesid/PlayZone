@@ -1,76 +1,65 @@
-import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* About */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-white text-lg font-bold mb-4">PlayZone</h3>
-            <p className="text-sm mb-4">
-              Your ultimate destination for premium sports gear and equipment.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-white transition">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-white transition">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-white transition">
-                <Youtube className="w-5 h-5" />
-              </a>
+            <h3 className="text-white font-bold mb-4">ONLINE SHOPPING</h3>
+            <ul className="space-y-2">
+              <li>Sports Gear</li>
+              <li>Fitness Equipment</li>
+              <li>Training Wear</li>
+              <li>Sports Nutrition</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-bold mb-4">CUSTOMER POLICIES</h3>
+            <ul className="space-y-2">
+              <li>Contact Us</li>
+              <li>FAQ</li>
+              <li>T&C</li>
+              <li>Terms Of Use</li>
+              <li>Track Orders</li>
+              <li>Shipping</li>
+              <li>Cancellation</li>
+              <li>Returns</li>
+              <li>Privacy policy</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-bold mb-4">USEFUL LINKS</h3>
+            <ul className="space-y-2">
+              <li>Blog</li>
+              <li>Careers</li>
+              <li>Site Map</li>
+              <li>Corporate Information</li>
+              <li>Whitehat</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-bold mb-4">EXPERIENCE OUR APP</h3>
+            <div className="flex space-x-4 mb-6">
+              <img src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" alt="Get it on Google Play" className="h-10" />
+              <img src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" alt="Download on the App Store" className="h-10" />
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition">Contact</a></li>
-              <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">FAQs</a></li>
-            </ul>
-          </div>
-
-          {/* Customer Service */}
-          <div>
-            <h3 className="text-white text-lg font-bold mb-4">Customer Service</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition">Payment Methods</a></li>
-              <li><a href="#" className="hover:text-white transition">Shipping Policy</a></li>
-              <li><a href="#" className="hover:text-white transition">Returns & Exchanges</a></li>
-              <li><a href="#" className="hover:text-white transition">Terms & Conditions</a></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-white text-lg font-bold mb-4">Contact Info</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center">
-                <MapPin className="w-5 h-5 mr-2" />
-                <span>123 Sport Street, NY 10001</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 mr-2" />
-                <span>+1 234 567 8900</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="w-5 h-5 mr-2" />
-                <span>contact@playzone.com</span>
-              </li>
-            </ul>
+            
+            <h3 className="text-white font-bold mb-4">KEEP IN TOUCH</h3>
+            <div className="flex space-x-4">
+              <Facebook className="w-6 h-6" />
+              <Twitter className="w-6 h-6" />
+              <Instagram className="w-6 h-6" />
+              <Youtube className="w-6 h-6" />
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-sm text-center">
-          <p>&copy; {new Date().getFullYear()} PlayZone. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p>&copy; 2024 SportsMyntra. All rights reserved.</p>
         </div>
       </div>
     </footer>
