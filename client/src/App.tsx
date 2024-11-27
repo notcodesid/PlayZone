@@ -1,30 +1,30 @@
-import Navbar from "./components/navbar"; 
-import Hero from "./components/herosection"; 
-import FeaturedProducts from "./components/sections/featuredproducts"; 
-import Categories from "./components/sections/categories"; 
-import TestimonialsAthletes from "./components/TestimonialsAthletes";
-import SpecialOffers from "./components/sections/SpecialOffers";
-import NewArrivals from "./components/sections/NewArrivals";
-import TopBrands from "./components/sections/TopBrands";
-import Newsletter from "./components/sections/Newsletter";
-import SocialGallery from "./components/sections/SpecialOffers";
+import BrandsShowcase from "./components/BrandsShowcase";
 import Footer from "./components/Footer";
+import GlobalBrands from "./components/GlobalBrands";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import SeasonalDeals from "./components/SeasonalDeals";
+import SpecialOffers from "./components/SpecialOffers";
+import Testimonials from "./components/Testimonials";
+import TrendingProducts from "./components/TrendingProducts";
+import { Toaster } from "./components/ui/toaster";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <div className="min-h-screen bg-white">
+    <Navbar />
+    <main>
       <Hero />
+      <TrendingProducts />
+      <BrandsShowcase />
+      <SeasonalDeals />
+      <GlobalBrands />
       <SpecialOffers />
-      <FeaturedProducts />
-      <Categories />
-      <NewArrivals />
-      <TopBrands />
-      <SocialGallery />
-      <TestimonialsAthletes />
-      <Newsletter />
-      <Footer />
-    </div>
+      <Testimonials />
+    </main>
+    <Footer />
+    <Toaster />
+  </div>
   );
 }
 
