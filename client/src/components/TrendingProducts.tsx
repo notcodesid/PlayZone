@@ -1,38 +1,56 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Star } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const products = [
   {
     id: 1,
-    name: 'Premium Yoga Mat',
-    image: 'https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?auto=format&fit=crop&w=600&q=80',
-    price: '₹1,299',
-    originalPrice: '₹2,499',
-    discount: '48% OFF',
+    name: 'HRX by Hrithik Roshan',
+    category: 'Women Regular Fit Tracksuit',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80',
+    price: 'Rs. 1481',
+    originalPrice: 'Rs. 3799',
+    discount: '61% OFF',
+    rating: 4.7,
+    ratingCount: 7,
+    isNew: false,
   },
   {
     id: 2,
-    name: 'Smart Fitness Watch',
-    image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=600&q=80',
-    price: '₹3,999',
-    originalPrice: '₹7,999',
-    discount: '50% OFF',
+    name: 'Allen Solly Woman',
+    category: 'Women Self-Design Joggers',
+    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=600&q=80',
+    price: 'Rs. 1059',
+    originalPrice: 'Rs. 1999',
+    discount: '47% OFF',
+    rating: 4.5,
+    ratingCount: 52,
+    isNew: false,
+    stock: 'Only Few Left!',
   },
   {
     id: 3,
-    name: 'Resistance Bands Set',
-    image: 'https://images.unsplash.com/photo-1598289431512-b97b0917affc?auto=format&fit=crop&w=600&q=80',
-    price: '₹899',
-    originalPrice: '₹1,499',
-    discount: '40% OFF',
+    name: 'StyleCast',
+    category: 'Women Round Neck Sweaters',
+    image: 'https://images.unsplash.com/photo-1576558345433-58e777a5e423?auto=format&fit=crop&w=600&q=80',
+    price: 'Rs. 1499',
+    originalPrice: 'Rs. 3499',
+    discount: 'Rs. 2000 OFF',
+    rating: 4.3,
+    ratingCount: 28,
+    isNew: true,
   },
   {
     id: 4,
-    name: 'Premium Cricket Bat',
-    image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=600&q=80',
-    price: '₹4,999',
-    originalPrice: '₹8,999',
-    discount: '44% OFF',
+    name: 'Puma Sports',
+    category: 'Men Training Jacket',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80',
+    price: 'Rs. 1899',
+    originalPrice: 'Rs. 3799',
+    discount: '50% OFF',
+    rating: 4.6,
+    ratingCount: 142,
+    isNew: false,
   },
 ];
 
@@ -49,18 +67,43 @@ const TrendingProducts = () => {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-[200px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-[300px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                   />
-                  <span className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md text-sm">
-                    {product.discount}
-                  </span>
+                  {product.isNew && (
+                    <Badge className="absolute top-2 right-2 bg-pink-500">
+                      NEW
+                    </Badge>
+                  )}
                 </div>
-                <h3 className="font-semibold mb-2">{product.name}</h3>
-                <div className="flex items-center gap-2">
-                  <span className="font-bold">{product.price}</span>
-                  <span className="text-gray-500 line-through text-sm">
-                    {product.originalPrice}
-                  </span>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center bg-green-600 text-white px-2 py-0.5 rounded text-sm">
+                      <span className="font-bold">{product.rating}</span>
+                      <Star className="w-3 h-3 ml-1 fill-current" />
+                    </div>
+                    <span className="text-gray-500 text-sm">
+                      | {product.ratingCount}
+                    </span>
+                  </div>
+                  
+                  <h3 className="font-semibold text-gray-700">{product.name}</h3>
+                  <p className="text-sm text-gray-500">{product.category}</p>
+                  
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-gray-900">{product.price}</span>
+                    <span className="text-gray-500 line-through text-sm">
+                      {product.originalPrice}
+                    </span>
+                    <span className="text-orange-500 font-medium text-sm">
+                      {product.discount}
+                    </span>
+                  </div>
+                  
+                  {product.stock && (
+                    <p className="text-orange-500 text-sm font-medium">
+                      {product.stock}
+                    </p>
+                  )}
                 </div>
               </CardContent>
             </Card>

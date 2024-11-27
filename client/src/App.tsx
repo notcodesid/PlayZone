@@ -2,7 +2,7 @@ import BrandsShowcase from "./components/BrandsShowcase";
 import Footer from "./components/Footer";
 import GlobalBrands from "./components/GlobalBrands";
 import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
 import SeasonalDeals from "./components/SeasonalDeals";
 import SpecialOffers from "./components/SpecialOffers";
 import Testimonials from "./components/Testimonials";
