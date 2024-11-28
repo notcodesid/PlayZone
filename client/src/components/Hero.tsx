@@ -1,23 +1,31 @@
 import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const slides = [
   {
     id: 1,
-    image: 'https://images.pexels.com/photos/29541464/pexels-photo-29541464/free-photo-of-stylish-athletic-sneakers-and-box-display.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    title: 'Exclusive Shoe Collection',
-    description: 'Step into style with up to 50% off on select shoes',
+    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1920&q=80',
+    subtitle: 'New Collection',
+    title: ['ELITE', 'PERFORMANCE', 'GEAR'],
+    description: 'Elevate your game with premium sports equipment',
+    offer: 'Up to 50% off on selected items',
   },
   {
     id: 2,
-    image: 'https://images.pexels.com/photos/5038834/pexels-photo-5038834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    title: 'Couple Offer Collection',
-    description: 'Explore exclusive deals for couples in sports fashion',
+    image: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1920&q=80',
+    subtitle: 'Limited Time',
+    title: ['SUMMER', 'ESSENTIALS', '2024'],
+    description: 'Stay cool and comfortable during your workouts',
+    offer: 'Starting from ₹999 only',
   },
   {
     id: 3,
-    image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    title: 'Gym Equipment',
-    description: 'Discover top-notch gym equipment with free shipping',
+    image: 'https://images.pexels.com/photos/6740821/pexels-photo-6740821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    subtitle: 'Exclusive Deal',
+    title: ['PRO', 'ATHLETE', 'SERIES'],
+    description: 'Professional grade equipment for serious athletes',
+    offer: 'Free shipping on orders above ₹2999',
   },
 ];
 
@@ -30,7 +38,6 @@ const Hero = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
 
   return (
     <div className="relative h-[600px] overflow-hidden">
@@ -45,25 +52,53 @@ const Hero = () => {
           >
             <img
               src={slide.image}
-              alt={slide.title}
+              alt={slide.title.join(' ')}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-white">
-              <div className="text-center">
-                <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
-                <p className="text-xl mb-8">{slide.description}</p>
+            <div className="absolute inset-0 bg-black/40">
+              <div className="container mx-auto h-full">
+                <div className="flex flex-col justify-center h-full max-w-6xl px-4 md:px-8">
+                  <span className="text-yellow-400 font-semibold mb-4 tracking-wider uppercase text-lg md:text-xl">
+                    {slide.subtitle}
+                  </span>
+                  <div className="mb-6">
+                    <h2 className="flex flex-wrap items-center gap-x-4 text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-none tracking-tight">
+                      {slide.title.map((word, index) => (
+                        <span
+                          key={index}
+                          className="inline-block"
+                          style={{
+                            textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+                            animation: `fadeInSlide ${0.5 + index * 0.2}s ease-out`
+                          }}
+                        >
+                          {word}
+                        </span>
+                      ))}
+                    </h2>
+                  </div>
+                  <div className="space-y-4">
+                    <p className="text-xl md:text-2xl text-gray-200 max-w-2xl">
+                      {slide.description}
+                    </p>
+                    <p className="text-2xl md:text-3xl text-yellow-400 font-semibold">
+                      {slide.offer}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full ${
-              currentSlide === index ? 'bg-white' : 'bg-white/50'
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              currentSlide === index 
+                ? 'bg-white w-8' 
+                : 'bg-white/50 hover:bg-white/80'
             }`}
             onClick={() => setCurrentSlide(index)}
           />
