@@ -29,27 +29,30 @@ const winterProducts = [
 
 const SeasonalDeals = () => {
   return (
-    <section className="py-12 px-4 bg-gray-50">
+    <section className="py-12 px-4">
       <div className="container mx-auto">
         <h2 className="text-2xl font-bold mb-8">WINTER SEASON SPECIALS</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {winterProducts.map((product) => (
-            <Card key={product.id} className="group cursor-pointer">
-              <CardContent className="p-4">
-                <div className="relative overflow-hidden mb-4">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-[300px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4">
-                    <h3 className="font-semibold text-lg">{product.name}</h3>
-                    <div className="flex items-center gap-2 mt-2">
-                      <span className="font-bold">{product.price}</span>
-                      <span className="text-gray-300 line-through text-sm">
+            <Card 
+              key={product.id} 
+              className="group cursor-pointer overflow-hidden rounded-lg"
+            >
+              <CardContent className="p-0 relative aspect-[4/3]">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                    <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg font-bold">{product.price}</span>
+                      <span className="text-sm text-gray-300 line-through">
                         {product.originalPrice}
                       </span>
-                      <span className="bg-red-500 px-2 py-1 rounded text-sm">
+                      <span className="bg-red-500 px-2 py-1 text-sm font-medium rounded">
                         {product.discount}
                       </span>
                     </div>
