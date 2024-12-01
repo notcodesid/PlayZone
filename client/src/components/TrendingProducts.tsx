@@ -1,53 +1,54 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Star } from 'lucide-react';
+import { Star, Heart } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 const products = [
   {
     id: 1,
-    name: 'HRX by Hrithik Roshan',
-    category: 'Women Regular Fit Tracksuit',
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80',
-    price: 'Rs. 1481',
-    originalPrice: 'Rs. 3799',
-    discount: '61% OFF',
-    rating: 4.7,
-    ratingCount: 7,
-    isNew: false,
+    name: 'Nike Pro Training Set',
+    category: 'Professional Sports Gear',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80',
+    price: 'Rs. 2,481',
+    originalPrice: 'Rs. 4,999',
+    discount: '50% OFF',
+    rating: 4.8,
+    ratingCount: 127,
+    isNew: true,
   },
   {
     id: 2,
-    name: 'Allen Solly Woman',
-    category: 'Women Self-Design Joggers',
-    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=600&q=80',
-    price: 'Rs. 1059',
-    originalPrice: 'Rs. 1999',
-    discount: '47% OFF',
-    rating: 4.5,
-    ratingCount: 52,
+    name: 'Adidas Runner Elite',
+    category: 'Professional Running Shoes',
+    image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80',
+    price: 'Rs. 3,299',
+    originalPrice: 'Rs. 5,999',
+    discount: '45% OFF',
+    rating: 4.7,
+    ratingCount: 89,
     isNew: false,
     stock: 'Only Few Left!',
   },
   {
     id: 3,
-    name: 'StyleCast',
-    category: 'Women Round Neck Sweaters',
-    image: 'https://images.unsplash.com/photo-1576558345433-58e777a5e423?auto=format&fit=crop&w=600&q=80',
-    price: 'Rs. 1499',
-    originalPrice: 'Rs. 3499',
-    discount: 'Rs. 2000 OFF',
-    rating: 4.3,
-    ratingCount: 28,
+    name: 'Puma Training Kit',
+    category: 'Gym Equipment Set',
+    image: 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=600&q=80',
+    price: 'Rs. 1,899',
+    originalPrice: 'Rs. 3,799',
+    discount: 'Rs. 1900 OFF',
+    rating: 4.5,
+    ratingCount: 56,
     isNew: true,
   },
   {
     id: 4,
-    name: 'Puma Sports',
-    category: 'Men Training Jacket',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80',
-    price: 'Rs. 1899',
-    originalPrice: 'Rs. 3799',
-    discount: '50% OFF',
+    name: 'Under Armour Pro',
+    category: 'Performance Gear',
+    image: 'https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80',
+    price: 'Rs. 2,599',
+    originalPrice: 'Rs. 4,999',
+    discount: '48% OFF',
     rating: 4.6,
     ratingCount: 142,
     isNew: false,
@@ -61,52 +62,72 @@ const TrendingProducts = () => {
         <h2 className="text-2xl font-bold mb-8">TRENDING NOW</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <Card key={product.id} className="group cursor-pointer">
+            <div key={product.id} className="group">
               <CardContent className="p-4">
-                <div className="relative overflow-hidden mb-4">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-[300px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
-                  />
-                  {product.isNew && (
-                    <Badge className="absolute top-2 right-2 bg-pink-500">
-                      NEW
-                    </Badge>
-                  )}
+                <div className="relative mb-4">
+                  <div className="relative aspect-square overflow-hidden rounded-lg">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <button 
+                      className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+                      aria-label="Add to wishlist"
+                    >
+                      <Heart className="w-5 h-5 text-gray-600" />
+                    </button>
+                    {product.isNew && (
+                      <Badge className="absolute top-4 left-4 bg-pink-500">
+                        NEW
+                      </Badge>
+                    )}
+                  </div>
                 </div>
-                <div className="space-y-2">
+
+                <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <div className="flex items-center bg-green-600 text-white px-2 py-0.5 rounded text-sm">
+                    <div className="flex items-center bg-red-400 px-2 py-0.5 rounded text-sm text-white">
                       <span className="font-bold">{product.rating}</span>
                       <Star className="w-3 h-3 ml-1 fill-current" />
                     </div>
-                    <span className="text-gray-500 text-sm">
-                      | {product.ratingCount}
+                    <span className="text-sm text-gray-600">
+                      ({product.ratingCount})
                     </span>
                   </div>
-                  
-                  <h3 className="font-semibold text-gray-700">{product.name}</h3>
-                  <p className="text-sm text-gray-500">{product.category}</p>
-                  
+
+                  <div>
+                    <h3 className="font-semibold text-lg">{product.name}</h3>
+                    <p className="text-sm text-gray-600">{product.category}</p>
+                  </div>
+
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-gray-900">{product.price}</span>
+                    <span className="font-bold text-lg">{product.price}</span>
                     <span className="text-gray-500 line-through text-sm">
                       {product.originalPrice}
                     </span>
-                    <span className="text-orange-500 font-medium text-sm">
+                    <span className="text-red-500 font-medium text-sm">
                       {product.discount}
                     </span>
                   </div>
-                  
-                  {product.stock && (
-                    <p className="text-orange-500 text-sm font-medium">
-                      {product.stock}
-                    </p>
-                  )}
+
+                  <div className="flex gap-2 pt-2">
+                    <Button 
+                      variant="outline" 
+                      className="flex-1 rounded-3xl"
+                    >
+                      Add to Cart
+                    </Button>
+                    <Button 
+                      variant="default"
+                      className="flex-1 bg-red-500 hover:bg-red-600 rounded-3xl"
+                    >
+                      Buy Now
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
